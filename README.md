@@ -3,6 +3,7 @@
 A single-file, animated campus events landing page built on the **Kolibrie** motion system.
 
 ---
+🔗 **Live demo:** https://kunwarrishow35.github.io/iem-uem-campus-events/
 
 ## Running locally
 
