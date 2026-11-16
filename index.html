@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IEM x UEM | Campus Events 2026</title>
+<meta name="description" content="Hackathons, conferences, poster presentations and more at the Institute of Engineering and Management, under the University of Engineering and Management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Playfair:ital,opsz,wdth,wght@0,5..1200,87.5..112.5,300..900;1,5..1200,87.5..112.5,300..900&family=Yellowtail&family=Titan+One&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────────────────── */
+:root{
+  --cream:#faf3e4; --ink:#141110; --tomato:#ef4a23; --butter:#ffd46e;
+  --sky:#8fc6e8; --pink:#f6a9c2; --sage:#b9c48a; --white:#ffffff; --night:#141110;
+  --page:var(--cream);
+}
+/* ─── SCALING ─────────────────────────────────────────────────────────── */
+html{ font-size:calc(100vw / 90); }
+@media(max-width:991px){ html{ font-size:calc(100vw / 60); } }
+@media(max-width:600px){ html{ font-size:calc(100vw / 24.375); } }
+/* ─── LENIS ───────────────────────────────────────────────────────────── */
+html.lenis,html.lenis body{height:auto;}
+.lenis.lenis-smooth{scroll-behavior:auto!important;}
+/* ─── RESET ───────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+body{
+  background:var(--page);
+  transition:background-color .7s cubic-bezier(.65,.05,0,1);
+  color:var(--ink);
+  font-family:'Archivo',sans-serif;
+  overflow-x:clip;
+}
+html[data-theme=dark]{ --page:var(--night); }
+/* ─── PAGE READY ──────────────────────────────────────────────────────── */
+main{ visibility:hidden; }
+html[data-page-ready] main{ visibility:visible; }
+[data-text-reveal],[data-scroll-reveal]{ visibility:hidden; }
+html[data-page-ready] [data-text-reveal],
+html[data-page-ready] [data-scroll-reveal]{ visibility:visible; }
+
+/* ─── SHARED TYPE ─────────────────────────────────────────────────────── */
+.hero-headline{
+  font-family:'Archivo',sans-serif;
+  font-weight:700;font-stretch:72%;
+  /* Slightly reduced so both lines fit at all widths */
+  font-size:8rem;letter-spacing:-0.02em;line-height:.85em;
+  text-transform:uppercase;
+  color:var(--cream);
+  text-shadow:0 .04em .35em rgba(20,17,16,.45);
+}
+/* Each line is nowrap to enforce exactly two lines */
+.hero-headline .hero-line{
+  display:block;white-space:nowrap;
+}
+/* The alternate serif word (BUILT) is butter-gold */
+.hero-headline .alt-word{
+  color:var(--butter);
+}
+@media(max-width:1200px){ .hero-headline{ font-size:7rem; } }
+@media(max-width:991px){  .hero-headline{ font-size:6rem; } }
+@media(max-width:768px){  .hero-headline{ font-size:5rem; } }
+@media(max-width:600px){  .hero-headline{ font-size:3.6rem; } }
+.section-headline{
+  font-family:'Archivo',sans-serif;
+  font-weight:700;font-stretch:72%;
+  font-size:8rem;letter-spacing:-0.02em;line-height:.8em;
+  text-transform:uppercase;
+}
+@media(max-width:991px){ .section-headline{ font-size:6rem; } }
+@media(max-width:600px){ .section-headline{ font-size:4.2rem; } }
+.team-headline{ font-size:7rem; }
+@media(max-width:600px){ .team-headline{ font-size:4.2rem; } }
+.alt-word{
+  font-family:'Playfair',serif;
+  font-weight:300;font-stretch:87.5%;
+  font-variation-settings:'opsz' 120,'wdth' 87.5,'wght' 300;
+  letter-spacing:-0.035em;
+}
+.eyebrow-m{
+  font-family:'Playfair',serif;
+  font-weight:500;font-stretch:87.5%;
+  font-variation-settings:'opsz' 40,'wdth' 87.5,'wght' 500;
+  font-size:2.5rem;letter-spacing:-0.03em;line-height:1em;
+}
+@media(max-width:600px){ .eyebrow-m{ font-size:1.75rem; } }
+.eyebrow-s{
+  font-family:'Playfair',serif;
+  font-weight:500;font-stretch:87.5%;
+  font-variation-settings:'opsz' 40,'wdth' 87.5,'wght' 500;
+  font-size:2rem;letter-spacing:-0.03em;line-height:1em;
+}
+@media(max-width:600px){ .eyebrow-s{ font-size:1.5rem; } }
+.para{
+  font-family:'Playfair',serif;
+  font-weight:400;
+  font-variation-settings:'opsz' 20,'wdth' 100,'wght' 400;
+  font-size:1.25rem;line-height:1.35;letter-spacing:-0.01em;
+}
+/* SplitText line wrapper fix */
+.line{ padding-bottom:.06em;margin-bottom:-.06em; }
+
+/* ─── LOAD WIPE ───────────────────────────────────────────────────────── */
+#wipe{
+  position:fixed;inset:0;z-index:1000;pointer-events:none;
+  overflow:clip;
+}
+#wipe[data-transition-ready]{ display:none; }
+#wipe svg{ width:100%;height:100%; }
+#wipe path{
+  fill:none;stroke:var(--tomato);stroke-width:0;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+
+/* ─── CURSOR LABEL ────────────────────────────────────────────────────── */
+#cursor-label{
+  position:fixed;top:0;left:0;z-index:999;pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+#cursor-label, #cursor-label *{
+  pointer-events:none;
+}
+#cursor-label-card{
+  background:var(--butter);
+  width:9.5rem;overflow:hidden;
+  border-radius:.5rem;
+  transform:scale(0);
+  transition:transform .4s cubic-bezier(.65,.05,0,1);
+}
+#cursor-label[data-cursor-marquee-status=active] #cursor-label-card{ transform:scale(1); }
+.cursor-label-inner{
+  display:inline-flex;white-space:nowrap;
+  font-family:'Archivo',sans-serif;
+  font-weight:700;font-stretch:72%;
+  text-transform:uppercase;font-size:1.3rem;
+  animation:cursor-marquee linear infinite;
+  animation-play-state:paused;
+}
+.cursor-label-inner span{
+  display:inline-block;padding:.375em .25em;
+  flex-shrink:0;
+}
+@keyframes cursor-marquee{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+
+/* ─── NAV ─────────────────────────────────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:1.25rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  pointer-events:none;
+  /* Prevent pill clipping */
+  overflow:visible;
+}
+#nav > *{ pointer-events:auto; }
+.nav-logo-pill{
+  display:flex;align-items:center;gap:.5rem;
+  background:var(--white);
+  border-radius:1.5rem;padding:0 .85rem;height:3rem;
+  text-decoration:none;
+  flex-shrink:0;
+  /* Never clip at screen edge */
+  min-width:0;
+}
+.nav-logo-pill img{ height:2.2rem;width:auto;object-fit:contain;flex-shrink:0; }
+.nav-logo-divider{
+  width:1px;height:1.5rem;background:var(--ink);opacity:.2;flex-shrink:0;
+}
+.nav-fest-name{
+  font-family:'Yellowtail',cursive;
+  font-size:2.2rem;line-height:1;color:var(--tomato);
+  transform:rotate(-8deg);transform-origin:left center;
+  margin-top:.2rem;margin-left:.75rem;
+  display:inline-block;
+  flex-shrink:0;
+}
+.nav-left{ display:flex;align-items:center;min-width:0; }
+#nav-centre{
+  position:absolute;top:1.25rem;left:50%;transform:translateX(-50%);
+  background:var(--white);border-radius:1.5rem;
+  height:3rem;padding:0 1.25rem;
+  display:flex;align-items:center;gap:1.5rem;
+}
+.nav-link{
+  display:flex;flex-direction:column;align-items:center;
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:1.05rem;letter-spacing:-0.01em;text-transform:uppercase;
+  position:relative;
+}
+.nav-link-underline{
+  position:absolute;top:100%;width:100%;height:.5em;
+  background:var(--tomato);
+}
+#nav-right{
+  background:var(--white);border-radius:1.5rem;
+  height:3rem;padding:0 1.25rem;
+  display:flex;align-items:center;gap:.5rem;
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:1.05rem;letter-spacing:-0.01em;text-transform:uppercase;
+}
+.nav-dot{
+  width:.45rem;height:.45rem;border-radius:50%;
+  background:var(--tomato);flex-shrink:0;
+}
+@media(max-width:991px){
+  #nav-centre{ display:none; }
+}
+@media(max-width:600px){
+  #nav{ padding:1rem; }
+  .nav-logo-pill{ height:2.5rem; }
+  .nav-logo-pill img{ height:1.7rem; }
+  .nav-fest-name{ font-size:1.6rem; }
+  #nav-right{ height:2.5rem;font-size:.95rem;padding:0 .9rem; }
+}
+
+/* ─── HERO ────────────────────────────────────────────────────────────── */
+#hero{
+  height:100vh;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+#hero-bg{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+}
+#hero-poster{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 15%;
+  animation:ken-burns 24s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@media(max-width:600px){ #hero-poster{ object-position:center 10%; } }
+@keyframes ken-burns{
+  from{ transform:scale(1.0) translate(0,0); }
+  to{ transform:scale(1.06) translate(-0.5%, -0.5%); }
+}
+/* Warm golden-hour overlay — matches the cream/tomato/butter look */
+#hero-overlay{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,212,110,.18), rgba(239,74,35,.10) 60%, rgba(20,17,16,.35));
+  mix-blend-mode:multiply;
+}
+/* Lightest warm radial scrim behind the headline for legibility */
+#hero-overlay::after{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 55% at 50% 64%,
+    rgba(20,17,16,.30) 0%, rgba(20,17,16,.10) 50%, rgba(20,17,16,0) 80%);
+}
+/* Bottom blend into the next cream section over 12vh */
+#hero-bottom-fade{
+  position:absolute;bottom:0;left:0;right:0;height:12vh;z-index:2;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(250,243,228,0) 0%, rgba(250,243,228,0.7) 65%, var(--cream) 100%);
+}
+#hero-cursor-card{
+  position:absolute;z-index:3;
+  width:16rem;height:16rem;
+  transform:translate(-50%,-50%);
+  overflow:hidden;border-radius:.75rem;
+  opacity:0;
+}
+.hero-card-media{
+  position:absolute;inset:0;transform:scale(1.2);
+}
+.hero-card-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  opacity:0;transition:opacity .3s;
+}
+.hero-card-photo.on{ opacity:1; }
+#hero-content{
+  position:relative;z-index:4;
+  display:flex;flex-direction:column;
+  align-items:center;gap:1.8rem;
+  margin-top:2.5rem;
+  text-align:center;
+}
+@media(max-width:600px){
+  #hero-content{ gap:1.4rem;margin-top:4.5rem;padding:0 1rem; }
+}
+#hero-eyebrow{
+  font-family:'Playfair',serif;
+  font-weight:500;font-stretch:87.5%;
+  font-variation-settings:'opsz' 40,'wdth' 87.5,'wght' 500;
+  font-size:1.4rem;letter-spacing:.02em;
+  color:var(--cream);text-transform:uppercase;
+  text-shadow:0 .04em .35em rgba(20,17,16,.55);
+}
+.hero-link{
+  display:flex;align-items:center;gap:.375em;
+  font-family:'Playfair',serif;
+  font-weight:500;font-stretch:87.5%;
+  font-variation-settings:'opsz' 40,'wdth' 87.5,'wght' 500;
+  font-size:2.1rem;letter-spacing:-0.03em;line-height:1;
+  color:var(--cream);
+  position:relative;
+  text-shadow:0 .04em .35em rgba(20,17,16,.45);
+}
+@media(max-width:600px){ .hero-link{ font-size:1.6rem; } }
+.hero-link-text{
+  position:relative;
+}
+.hero-link-underline{
+  position:absolute;top:118%;width:100%;height:.6em;
+  color:var(--tomato);overflow:visible;
+}
+.hero-arrow-wrap{
+  width:1em;height:1em;background:var(--tomato);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;border-radius:.15em;flex-shrink:0;
+}
+.hero-arrow-inner{
+  display:flex;flex-direction:column;width:14px;
+}
+.hero-arrow-inner svg{ flex-shrink:0; }
+@media(max-width:600px){
+  #hero-cursor-card{
+    position:absolute;top:13%;left:50%;
+    width:7.5rem;height:7.5rem;
+    transform:translateX(-50%) rotate(-5deg);
+    opacity:1!important;
+  }
+}
+
+/* ─── CLIENT MARQUEE ──────────────────────────────────────────────────── */
+#marquee-wrap{
+  position:absolute;bottom:1.5rem;left:0;right:0;z-index:2;
+  overflow:hidden;
+}
+#marquee-scroll{
+  margin-left:-10%;width:120%;
+  display:flex;
+}
+.marquee-collection{
+  display:flex;flex-shrink:0;
+}
+.marquee-item{
+  width:9rem;height:7rem;
+  margin:0 2.5rem;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;
+  flex-shrink:0;
+}
+.marquee-icon{ width:60%;height:auto; }
+.marquee-label{
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--cream);opacity:.8;
+}
+@media(max-width:600px){
+  .marquee-item{ width:5.5rem;height:5rem;margin:0 1rem; }
+}
+
+/* ─── SECTION 2: HAPPENING NOW ────────────────────────────────────────── */
+#happening{
+  position:relative;
+}
+.happening-pin{
+  height:100vh;
+  display:grid;
+  grid-template-columns:38fr 62fr;
+  gap:2rem;
+  padding:0 3rem 0 5rem;
+  align-items:center;
+  overflow:hidden;
+}
+@media(max-width:991px){
+  #happening{ /* no pin */ }
+  .happening-pin{
+    display:block;height:auto;
+    padding:6rem 1.5rem 4rem;
+    gap:3rem;
+  }
+}
+.happening-left{
+  display:flex;flex-direction:column;gap:1.5rem;
+  align-items:flex-start;justify-content:center;
+}
+.happening-right{
+  position:relative;height:100%;
+  perspective:1400px;
+}
+.stack-root{
+  transform-style:preserve-3d;
+  position:relative;height:100%;
+}
+.stack-slide{
+  position:absolute;
+  aspect-ratio:1.75;
+  width:min(80vh,52vw);
+  left:50%;top:calc(50% - 5vh);
+  transform:translate(-50%,-50%);
+  border-radius:.75rem;overflow:hidden;
+  cursor:pointer;
+}
+@media(max-width:991px){
+  .stack-slide{
+    position:relative;left:auto;top:auto;
+    transform:none;width:100%;margin-bottom:1.5rem;
+    aspect-ratio:1.75;
+  }
+  .happening-right{ height:auto;perspective:none; }
+  .stack-root{ height:auto; }
+}
+.slide-frame{
+  position:absolute;inset:0;
+  padding:1.75vh;
+  display:flex;align-items:flex-end;
+}
+.slide-crop{
+  position:absolute;inset:1.75vh;
+  overflow:hidden;border-radius:.4rem;
+}
+.slide-crop img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+}
+.slide-gradient{
+  position:absolute;inset:0;
+  background:linear-gradient(#0000 55%,#0006);
+  pointer-events:none;
+  border-radius:.4rem;
+}
+.slide-title{
+  position:absolute;bottom:2.4em;left:1.75vh;right:1.75vh;
+  font-family:'Archivo',sans-serif;font-weight:800;font-stretch:72%;
+  font-size:7.5vh;line-height:.8;letter-spacing:-0.02em;
+  color:var(--cream);text-transform:uppercase;text-align:center;
+  text-shadow:0 .05em .3em rgba(0,0,0,.25);
+}
+.slide-meta{
+  position:absolute;bottom:.8em;left:1.75vh;right:1.75vh;
+  display:flex;flex-direction:column;align-items:center;gap:.25em;
+}
+.slide-date-cat{
+  font-family:'Playfair',serif;
+  font-weight:500;
+  font-variation-settings:'opsz' 20,'wdth' 87.5,'wght' 500;
+  font-size:2.2vh;color:var(--cream);letter-spacing:-.01em;
+  text-align:center;
+}
+.status-chip{
+  display:inline-flex;align-items:center;gap:.35em;
+  padding:.2em .6em;border-radius:2em;
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:1.1vh;letter-spacing:.05em;text-transform:uppercase;
+  position:absolute;top:calc(1.75vh + .4rem);left:calc(1.75vh + .4rem);
+  z-index:5;
+}
+.status-chip.ongoing{
+  background:var(--white);color:var(--ink);
+}
+.status-chip.upcoming{
+  background:var(--cream);color:var(--ink);
+}
+.chip-dot{
+  width:.5em;height:.5em;border-radius:50%;background:var(--tomato);
+  animation:chip-pulse 1.6s ease-in-out infinite;
+}
+@keyframes chip-pulse{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:.5;transform:scale(1.4);}
+}
+.upcoming .chip-dot{ animation:none;background:var(--ink);opacity:.4; }
+@media(max-width:991px){
+  .slide-title{ font-size:3.4rem;bottom:1.6em; }
+  @media(max-width:600px){ .slide-title{ font-size:2rem;bottom:1.6em; } }
+}
+
+/* ─── BADGE ───────────────────────────────────────────────────────────── */
+#stack-badge{
+  position:absolute;right:1rem;bottom:1rem;
+  width:9rem;height:9rem;z-index:5;
+}
+@media(max-width:991px){ #stack-badge{ display:none; } }
+
+/* ─── SECTION 3: CALENDAR ─────────────────────────────────────────────── */
+#calendar{
+  background:var(--cream);
+  padding:8rem 5rem;
+  scroll-margin-top:5rem;
+}
+@media(max-width:991px){ #calendar{ padding:6rem 1.5rem; } }
+@media(max-width:600px){ #calendar{ padding:4rem 1rem; } }
+.calendar-header{
+  margin-bottom:3rem;
+}
+.filter-row{
+  display:flex;flex-wrap:wrap;gap:.6rem;
+  margin-top:2rem;
+  margin-bottom:3rem;
+}
+.filter-pill{
+  background:var(--white);border:none;cursor:pointer;
+  border-radius:2em;padding:.45em 1.1em;
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.9rem;letter-spacing:-.01em;text-transform:uppercase;
+  color:var(--ink);
+  transition:background .25s,color .25s;
+}
+.filter-pill.active{
+  background:var(--tomato);color:var(--white);
+}
+.filter-pill:focus-visible{
+  outline:2px solid var(--tomato);outline-offset:2px;
+}
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+@media(max-width:991px){ .events-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:600px){ .events-grid{ grid-template-columns:1fr; } }
+.event-card{
+  background:var(--white);border-radius:1rem;
+  overflow:hidden;
+  transition:transform .6s cubic-bezier(.65,.05,0,1),box-shadow .6s cubic-bezier(.65,.05,0,1);
+  cursor:pointer;
+  display:flex;flex-direction:column;
+}
+.event-card:hover{
+  transform:translateY(-0.4rem);
+  box-shadow:0 1.2rem 3rem rgba(20,17,16,.12);
+}
+.event-card:focus-within{
+  outline:2px solid var(--tomato);outline-offset:2px;
+}
+.event-card-img-wrap{
+  aspect-ratio:4/3;overflow:hidden;
+  background:#e9dcc6;flex-shrink:0;
+}
+.event-card-img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.65,.05,0,1);
+  display:block;
+}
+.event-card:hover .event-card-img{ transform:scale(1.04); }
+.event-card-body{ padding:1rem;display:flex;flex-direction:column;gap:.5rem;flex:1; }
+.event-card-top{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+}
+.event-card-category{
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink);opacity:.5;
+}
+.event-card-chip{
+  display:inline-flex;align-items:center;gap:.3em;
+  padding:.15em .55em;border-radius:2em;
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;
+}
+.event-card-chip.ongoing{
+  background:var(--tomato);color:var(--white);
+}
+.event-card-chip.upcoming{
+  background:var(--cream);color:var(--ink);
+}
+.event-card-chip.past{
+  background:#e9dcc6;color:var(--ink);opacity:.6;
+}
+.event-card-chip .chip-dot{ width:.4em;height:.4em; }
+.event-card-title{
+  font-family:'Archivo',sans-serif;font-weight:800;font-stretch:72%;
+  font-size:1.3rem;letter-spacing:-0.01em;text-transform:uppercase;
+  line-height:.9;color:var(--ink);
+}
+.event-card-when{
+  font-family:'Playfair',serif;
+  font-weight:400;
+  font-variation-settings:'opsz' 20,'wdth' 100,'wght' 400;
+  font-size:.85rem;color:var(--ink);opacity:.6;line-height:1.3;
+}
+.event-card-desc{
+  font-family:'Playfair',serif;
+  font-weight:400;
+  font-variation-settings:'opsz' 20,'wdth' 100,'wght' 400;
+  font-size:.85rem;line-height:1.35;color:var(--ink);opacity:.7;
+}
+.event-card-eligible{
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.7rem;letter-spacing:.03em;text-transform:uppercase;
+  color:var(--tomato);
+}
+.event-card-register{
+  display:inline-flex;align-items:center;gap:.3em;
+  font-family:'Playfair',serif;
+  font-weight:500;
+  font-variation-settings:'opsz' 40,'wdth' 87.5,'wght' 500;
+  font-size:1rem;letter-spacing:-0.02em;
+  color:var(--ink);
+  position:relative;margin-top:auto;padding-top:.4rem;
+  background:none;border:none;cursor:pointer;text-align:left;
+}
+.event-card-register-underline{
+  position:absolute;top:118%;width:100%;height:.5em;
+  color:var(--tomato);overflow:visible;left:0;
+}
+
+/* ─── REGISTRATION MODAL ──────────────────────────────────────────────── */
+#modal-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(20,17,16,.5);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .35s cubic-bezier(.65,.05,0,1);
+  padding:1rem;
+}
+#modal-overlay.open{
+  opacity:1;pointer-events:auto;
+}
+#modal{
+  background:var(--white);border-radius:1.25rem;
+  padding:2.5rem;max-width:28rem;width:100%;
+  position:relative;
+  transform:translateY(1.5rem);
+  transition:transform .35s cubic-bezier(.65,.05,0,1);
+  max-height:90vh;overflow-y:auto;
+}
+#modal-overlay.open #modal{ transform:translateY(0); }
+.modal-title{
+  font-family:'Archivo',sans-serif;font-weight:800;font-stretch:72%;
+  font-size:1.6rem;letter-spacing:-0.02em;text-transform:uppercase;
+  margin-bottom:.25rem;
+}
+.modal-event-name{
+  font-family:'Playfair',serif;
+  font-weight:500;font-variation-settings:'opsz' 40,'wdth' 87.5,'wght' 500;
+  font-size:1.1rem;color:var(--tomato);margin-bottom:1.5rem;
+}
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  background:none;border:none;cursor:pointer;
+  width:2rem;height:2rem;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  color:var(--ink);
+  font-size:1.2rem;
+  transition:background .2s;
+}
+.modal-close:hover{ background:var(--cream); }
+.modal-close:focus-visible{ outline:2px solid var(--tomato);outline-offset:2px; }
+.modal-field{ display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem; }
+.modal-label{
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;
+}
+.modal-input{
+  border:1.5px solid #ddd;border-radius:.6rem;
+  padding:.65rem .9rem;
+  font-family:'Playfair',serif;
+  font-weight:400;font-size:.95rem;
+  color:var(--ink);background:var(--cream);
+  transition:border-color .2s;
+  width:100%;
+}
+.modal-input:focus{
+  outline:none;border-color:var(--tomato);
+}
+.modal-submit{
+  width:100%;padding:.8rem;
+  background:var(--tomato);color:var(--white);border:none;
+  border-radius:.75rem;cursor:pointer;
+  font-family:'Archivo',sans-serif;font-weight:800;font-stretch:72%;
+  font-size:1rem;letter-spacing:.02em;text-transform:uppercase;
+  margin-top:.5rem;
+  transition:opacity .2s;
+}
+.modal-submit:hover{ opacity:.88; }
+.modal-submit:focus-visible{ outline:2px solid var(--ink);outline-offset:2px; }
+.modal-success{
+  display:none;text-align:center;padding:2rem 0;
+}
+.modal-success.show{ display:block; }
+.modal-form.hide{ display:none; }
+.modal-success-icon{
+  font-size:2.5rem;margin-bottom:.75rem;
+}
+.modal-success-title{
+  font-family:'Archivo',sans-serif;font-weight:800;font-stretch:72%;
+  font-size:1.4rem;letter-spacing:-0.02em;text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+.modal-success-msg{
+  font-family:'Playfair',serif;
+  font-weight:400;font-size:1rem;line-height:1.4;
+  color:var(--ink);opacity:.7;
+}
+.modal-demo-note{
+  font-size:.7rem;color:var(--ink);opacity:.4;
+  margin-top:.5rem;
+  font-family:'Archivo',sans-serif;
+}
+
+/* ─── TEAM SECTION ────────────────────────────────────────────────────── */
+#team{
+  height:340vh;
+  position:relative;
+  data-page-theme:dark;
+}
+@media(max-width:991px){ #team{ height:260vh; } }
+.team-sticky{
+  position:sticky;top:0;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  z-index:1;
+  flex-direction:column;
+  gap:1.4rem;text-align:center;
+}
+html[data-theme=dark] .team-sticky{ color:var(--cream); }
+.team-stamp{
+  position:absolute;
+  left:-3rem;top:-8rem;
+  width:10rem;
+  rotate:-10deg;
+  transform-origin:center center;
+}
+@media(max-width:600px){
+  .team-stamp{ width:6rem;left:0;top:-5rem; }
+}
+.team-stamp svg{ width:100%;height:auto; }
+.team-eyebrow{
+  color:inherit;
+  transition:color .7s cubic-bezier(.65,.05,0,1);
+}
+.team-headline-wrap{ color:inherit; transition:color .7s cubic-bezier(.65,.05,0,1); }
+.team-para{ max-width:26rem;color:inherit;transition:color .7s cubic-bezier(.65,.05,0,1); }
+
+/* ─── TEAM PHOTOS ─────────────────────────────────────────────────────── */
+.team-photo-layer{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+}
+.team-photo{
+  position:absolute;
+  container-type:inline-size;
+  pointer-events:auto;
+  cursor:default;
+  will-change:transform;
+}
+.team-photo-img-wrap{
+  width:100%;height:100%;
+  background:#e9dcc6;border-radius:.5rem;
+  overflow:hidden;
+  position:relative;
+}
+.team-photo-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+}
+.photo-name{
+  font-family:'Titan One',cursive;
+  font-size:clamp(1.8rem, 22cqw, 3rem);
+  color:var(--tomato);
+  -webkit-text-stroke:0.09em var(--cream);
+  paint-order:stroke fill;
+  text-align:center;
+  position:absolute;bottom:-.5rem;left:50%;transform:translateX(-50%);
+  max-width:calc(100% - 0.5rem);
+  white-space:nowrap;
+  line-height:1.15;
+  padding:0.1em 0.35em;
+  z-index:10;
+  pointer-events:none;
+  filter:drop-shadow(0 2px 4px rgba(20,17,16,.3));
+}
+.photo-tag{
+  position:absolute;bottom:.7rem;left:.7rem;
+  max-width:calc(100% - 1.4rem);
+  white-space:normal;
+  word-wrap:break-word;
+  background:var(--cream);color:var(--ink);
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;
+  padding:.25em .5em;border-radius:.25em;
+  line-height:1.2;
+  z-index:10;
+}
+@media(max-width:600px){
+  .photo-name{
+    font-size:clamp(1.3rem, 18cqw, 1.6rem);
+    -webkit-text-stroke:0.08em var(--cream);
+    bottom:-.35rem;
+  }
+  .photo-tag{
+    font-size:.75rem;
+    padding:.2em .4em;
+    bottom:.5rem;left:.5rem;
+    max-width:calc(100% - 1rem);
+  }
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────────────────── */
+#footer{
+  background:var(--night);color:var(--cream);
+  padding:5rem 5rem 3rem;
+}
+@media(max-width:991px){ #footer{ padding:4rem 1.5rem 2rem; } }
+@media(max-width:600px){ #footer{ padding:3rem 1rem 2rem; } }
+.footer-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  flex-wrap:wrap;gap:2rem;
+  padding-bottom:3rem;
+  border-bottom:1px solid rgba(250,243,228,.12);
+  margin-bottom:2rem;
+}
+.footer-logos{
+  display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;
+}
+.footer-logo-pill{
+  display:flex;align-items:center;gap:.5rem;
+  background:var(--white);border-radius:1.5rem;
+  padding:.4rem .9rem;
+}
+.footer-logo-pill img{ height:1.8rem;width:auto;object-fit:contain; }
+.footer-logo-divider{
+  width:1px;height:1.4rem;background:var(--ink);opacity:.2;
+}
+.footer-tagline{
+  font-family:'Playfair',serif;
+  font-weight:400;font-variation-settings:'opsz' 20,'wdth' 100,'wght' 400;
+  font-size:1rem;line-height:1.5;color:var(--cream);opacity:.7;
+  max-width:28rem;margin-top:.75rem;
+}
+.footer-links{
+  display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;
+  margin-top:1rem;
+}
+.footer-link{
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.9rem;letter-spacing:-.01em;text-transform:uppercase;
+  color:var(--cream);opacity:.7;
+  transition:opacity .2s;
+  position:relative;
+}
+.footer-link:hover{ opacity:1; }
+.footer-link:focus-visible{ outline:2px solid var(--tomato);outline-offset:2px; }
+.footer-contact{
+  font-family:'Playfair',serif;
+  font-weight:400;font-size:.95rem;
+  color:var(--cream);opacity:.6;
+}
+.footer-contact a{ color:var(--tomato);opacity:1; }
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.footer-credit-wrap{
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+}
+.footer-copy{
+  font-family:'Archivo',sans-serif;font-weight:400;font-stretch:72%;
+  font-size:.85rem;letter-spacing:.02em;
+  color:var(--cream);opacity:.5;
+}
+.footer-sep{
+  color:var(--cream);opacity:.3;font-size:.8rem;
+}
+.footer-credit{
+  font-family:'Playfair',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:1rem;
+  color:var(--cream);
+  opacity:.9;
+  letter-spacing:.01em;
+}
+@media(max-width:600px){
+  .footer-credit-wrap{ gap:.5rem; }
+  .footer-credit{ font-size:.85rem; }
+  .footer-copy{ font-size:.8rem; }
+}
+.footer-top-link{
+  font-family:'Archivo',sans-serif;font-weight:700;font-stretch:72%;
+  font-size:.85rem;letter-spacing:.02em;text-transform:uppercase;
+  color:var(--cream);opacity:.5;
+  cursor:pointer;background:none;border:none;
+  transition:opacity .2s;
+}
+.footer-top-link:hover{ opacity:1; }
+.footer-top-link:focus-visible{ outline:2px solid var(--tomato);outline-offset:2px; }
+
+/* ─── DRAW UNDERLINE EFFECT ───────────────────────────────────────────── */
+.draw-line{
+  position:absolute;
+  left:0;top:118%;width:100%;height:.6em;
+  color:var(--tomato);overflow:visible;
+  pointer-events:none;
+}
+.draw-line path{
+  fill:none;stroke:currentColor;stroke-width:10;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:0;stroke-dashoffset:0;
+}
+
+/* ─── FOCUS RINGS ─────────────────────────────────────────────────────── */
+:focus-visible{
+  outline:2px solid var(--tomato);outline-offset:3px;
+}
+
+/* font-weight hover chars */
+.char {
+  font-variation-settings: 'wght' var(--wght, 700), 'wdth' 72, 'opsz' 20;
+  display: inline-block;
+  color: inherit;
+}
+.alt-word .char, .alt-word.char {
+  color: var(--butter) !important;
+}
+
+/* ─── REDUCED MOTION ──────────────────────────────────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  *{ animation-duration:.001ms!important;transition-duration:.001ms!important; }
+  .hero-card-photo.on{ opacity:1; }
+  #team{ height:auto; }
+  .team-sticky{ position:relative;padding:8rem 0 4rem; }
+  .team-photo-layer{
+    position:static;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));
+    gap:2rem;padding:2rem;
+  }
+  .team-photo{
+    position:static;width:auto!important;height:auto!important;
+    aspect-ratio:4/5;
+  }
+}
+
+/* ─── SCROLL MARGIN ───────────────────────────────────────────────────── */
+#hero,#happening,#calendar,#team,#footer{ scroll-margin-top:0; }
+</style>
+</head>
+<body>
+<!-- LOAD WIPE -->
+<div id="wipe" aria-hidden="true">
+  <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+    <path d="M43 259C296 11.5688 994 -3 922.994 498.259C851.988 999.517 281.229 1004.28 123 767C-35.2287 529.721 179 259 472 259C765 259 792 498.259 659 654C526 809.741 319 755 285 669.001C251 583.001 299 452 496 452C693 452 876.073 639.171 935 937.001"/>
+  </svg>
+</div>
+
+<!-- CURSOR LABEL -->
+<div id="cursor-label" role="presentation">
+  <div id="cursor-label-card">
+    <div class="cursor-label-inner">
+      <span>Register ->&nbsp;&nbsp;&nbsp;</span>
+      <span>Register ->&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTRATION MODAL -->
+<div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div id="modal">
+    <button class="modal-close" aria-label="Close registration form" id="modal-close-btn">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
+      </svg>
+    </button>
+    <div class="modal-form" id="modal-form">
+      <div class="modal-title" id="modal-title">Register</div>
+      <div class="modal-event-name" id="modal-event-name"></div>
+      <div class="modal-field">
+        <label class="modal-label" for="reg-name">Full Name</label>
+        <input class="modal-input" type="text" id="reg-name" name="name" autocomplete="name" required placeholder="Your name">
+      </div>
+      <div class="modal-field">
+        <label class="modal-label" for="reg-email">Email</label>
+        <input class="modal-input" type="email" id="reg-email" name="email" autocomplete="email" required placeholder="you@university.edu">
+      </div>
+      <div class="modal-field">
+        <label class="modal-label" for="reg-id">College ID</label>
+        <input class="modal-input" type="text" id="reg-id" name="college_id" required placeholder="e.g. IEM/2024/001">
+      </div>
+      <button class="modal-submit" id="modal-submit" type="button">Submit Registration</button>
+      <!-- NOTE: No backend. Entries stored in localStorage only as a demo. -->
+      <p class="modal-demo-note">Demo only — data stored in your browser's localStorage, not sent anywhere.</p>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <div class="modal-success-icon">🎉</div>
+      <div class="modal-success-title">You're registered!</div>
+      <p class="modal-success-msg">We've got your spot. Check your email closer to the event date for further details.</p>
+      <p class="modal-demo-note">Demo only — data stored in localStorage, not sent to any server.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-left">
+    <a class="nav-logo-pill" href="#hero" aria-label="IEM x UEM — back to top">
+      <img src="logo/IEM-Logo-2019-4-1-1.png" alt="IEM logo" height="35">
+      <div class="nav-logo-divider" role="separator"></div>
+      <img src="logo/UEM-Logo.png" alt="UEM logo" height="35">
+    </a>
+    <span class="nav-fest-name" aria-hidden="true">Ignite 2026</span>
+  </div>
+  <div id="nav-centre" role="list">
+    <a class="nav-link" href="#team" role="listitem" data-draw-line>
+      <span>About</span>
+      <svg class="draw-line nav-link-underline" viewBox="0 0 310 40" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+    </a>
+    <a class="nav-link" href="#calendar" role="listitem" data-draw-line>
+      <span>Events</span>
+      <svg class="draw-line nav-link-underline" viewBox="0 0 310 40" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+    </a>
+    <a class="nav-link" href="#happening" role="listitem" data-draw-line>
+      <span>Schedule</span>
+      <svg class="draw-line nav-link-underline" viewBox="0 0 310 40" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+    </a>
+  </div>
+  <a id="nav-right" href="#calendar" aria-label="Register for an event">
+    <div class="nav-dot" aria-hidden="true"></div>
+    Register
+  </a>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════════════════ -->
+<section id="hero" data-cursor-cards>
+  <!-- BG PLATE -->
+  <div id="hero-bg">
+    <picture>
+      <source media="(max-width: 600px)" srcset="assets/hero/uem-1280.webp">
+      <img id="hero-poster"
+           src="assets/hero/uem.webp"
+           srcset="assets/hero/uem-1280.webp 1280w, assets/hero/uem.webp 1229w, assets/hero/uem.png 1229w"
+           sizes="100vw"
+           fetchpriority="high"
+           loading="eager"
+           alt="Institute of Engineering & Management Campus"
+           decoding="async"
+           onerror="handleImageError(this, 'Institute of Engineering & Management', 1229, 864)">
+    </picture>
+  </div>
+  <!-- LEGIBILITY OVERLAY -->
+  <div id="hero-overlay" aria-hidden="true"></div>
+  <!-- BOTTOM BLEND OVERLAY -->
+  <div id="hero-bottom-fade" aria-hidden="true"></div>
+
+  <!-- CURSOR CARD -->
+  <div id="hero-cursor-card" aria-hidden="true">
+    <div class="hero-card-media" id="hero-card-media">
+      <img class="hero-card-photo on" src="assets/events/hackhive-36.webp"
+           alt="Hackathon" loading="lazy" decoding="async" onerror="handleImageError(this, 'Hackathon', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/convergence-summit.webp"
+           alt="Conference keynote" loading="lazy" decoding="async" onerror="handleImageError(this, 'Keynote', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/paper-trail.webp"
+           alt="Poster presentation" loading="lazy" decoding="async" onerror="handleImageError(this, 'Poster', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/circuit-clash.webp"
+           alt="Robotics arena" loading="lazy" decoding="async" onerror="handleImageError(this, 'Robotics', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/raag-rhythm.webp"
+           alt="Cultural night" loading="lazy" decoding="async" onerror="handleImageError(this, 'Cultural', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/prototype-lab.webp"
+           alt="Tech workshop" loading="lazy" decoding="async" onerror="handleImageError(this, 'Workshop', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/sprint-cup.webp"
+           alt="Sports meet" loading="lazy" decoding="async" onerror="handleImageError(this, 'Sports', 600, 600)">
+      <img class="hero-card-photo" src="assets/events/alumni-assemble.webp"
+           alt="Award ceremony" loading="lazy" decoding="async" onerror="handleImageError(this, 'Alumni', 600, 600)">
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div id="hero-content">
+    <div id="hero-eyebrow">IEM × UEM campus events, Kolkata</div>
+    <h1 class="hero-headline"
+        data-text-reveal="chars"
+        data-font-weight-hover
+        data-fw-rest="700" data-fw-near="200" data-fw-radius="400">
+      <span class="hero-line">Where ideas</span>
+      <span class="hero-line">get <span class="alt-word"
+                data-font-weight-hover
+                data-fw-rest="300" data-fw-near="800" data-fw-radius="400">built</span></span>
+    </h1>
+    <a class="hero-link" href="#calendar" id="hero-cta">
+      <span class="hero-link-text">
+        See all events
+        <svg class="hero-link-underline draw-line always-on"
+             viewBox="0 0 310 40" preserveAspectRatio="none" aria-hidden="true">
+          <path/>
+        </svg>
+      </span>
+      <span class="hero-arrow-wrap" aria-hidden="true">
+        <span class="hero-arrow-inner">
+          <svg width="14" height="13" viewBox="0 0 14 13" fill="none">
+            <path d="M12.94 5.7 9.95 8 6.9 10.37l.84 1.86V0h-2.55v12.23l.85-1.86L3 8 0 5.7V9.05l6.47 4.95 6.47-4.95z" fill="#fff"/>
+          </svg>
+          <svg width="14" height="13" viewBox="0 0 14 13" fill="none">
+            <path d="M12.94 5.7 9.95 8 6.9 10.37l.84 1.86V0h-2.55v12.23l.85-1.86L3 8 0 5.7V9.05l6.47 4.95 6.47-4.95z" fill="#fff"/>
+          </svg>
+        </span>
+      </span>
+    </a>
+  </div>
+
+  <!-- MARQUEE -->
+  <div id="marquee-wrap" aria-hidden="true">
+    <div id="marquee-scroll">
+      <!-- Collection injected by JS (3 clones) -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     SECTION 2: HAPPENING NOW & NEXT
+══════════════════════════════════════════════════════════════════════ -->
+<section id="happening" data-featured-stack>
+  <div class="happening-pin" id="happening-pin">
+    <!-- LEFT COLUMN -->
+    <div class="happening-left" data-scroll-reveal-group>
+      <p class="eyebrow-s" data-scroll-reveal="lines"
+         style="max-width:26rem">
+        Live on campus, and what is coming next. Pick one, register, show up.
+      </p>
+      <h2 class="section-headline"
+          data-scroll-reveal="chars"
+          data-font-weight-hover
+          data-fw-rest="700" data-fw-near="200" data-fw-radius="400">
+        Happening<br>
+        <span class="alt-word"
+              data-font-weight-hover
+              data-fw-rest="300" data-fw-near="800" data-fw-radius="400">now</span><br>
+        &amp; next
+      </h2>
+    </div>
+
+    <!-- RIGHT COLUMN: CARD STACK -->
+    <div class="happening-right" id="stack-stage">
+      <div class="stack-root" id="stack-root">
+        <!-- Cards injected by JS -->
+      </div>
+      <!-- BADGE -->
+      <svg id="stack-badge" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="98" fill="var(--tomato)"/>
+        <path id="badge-arc" d="" fill="none"/>
+        <text font-family="Archivo, sans-serif" font-weight="800" font-size="24"
+              fill="var(--cream)" text-anchor="start">
+          <textPath href="#badge-arc-path" textLength="436" lengthAdjust="spacing">
+            LEARN · BUILD · PRESENT · REPEAT ·
+          </textPath>
+        </text>
+        <!-- Sun icon -->
+        <circle cx="100" cy="100" r="17" fill="none" stroke="var(--cream)" stroke-width="5"/>
+        <g stroke="var(--cream)" stroke-width="5" stroke-linecap="round">
+          <line x1="100" y1="74" x2="100" y2="66"/>
+          <line x1="100" y1="126" x2="100" y2="134"/>
+          <line x1="74" y1="100" x2="66" y2="100"/>
+          <line x1="126" y1="100" x2="134" y2="100"/>
+          <line x1="81.6" y1="81.6" x2="76" y2="76"/>
+          <line x1="118.4" y1="118.4" x2="124" y2="124"/>
+          <line x1="118.4" y1="81.6" x2="124" y2="76"/>
+          <line x1="81.6" y1="118.4" x2="76" y2="124"/>
+        </g>
+        <defs>
+          <path id="badge-arc-path"
+            d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"/>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     SECTION 3: THE FULL CALENDAR
+══════════════════════════════════════════════════════════════════════ -->
+<section id="calendar">
+  <div class="calendar-header" data-scroll-reveal-group>
+    <p class="eyebrow-m" data-scroll-reveal="lines">Every kind of event, all semester</p>
+    <h2 class="section-headline" style="margin-top:.75rem"
+        data-scroll-reveal="chars"
+        data-font-weight-hover
+        data-fw-rest="700" data-fw-near="200" data-fw-radius="400">
+      The full<br>
+      <span class="alt-word"
+            data-font-weight-hover
+            data-fw-rest="300" data-fw-near="800" data-fw-radius="400">calendar</span>
+    </h2>
+  </div>
+  <div class="filter-row" id="filter-row" role="group" aria-label="Filter events by type">
+    <!-- Filter pills injected by JS -->
+  </div>
+  <div class="events-grid" id="events-grid" role="list">
+    <!-- Event cards injected by JS -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     SECTION 4: TEAM
+══════════════════════════════════════════════════════════════════════ -->
+<section id="team" data-page-theme="dark">
+  <div class="team-sticky" id="team-sticky" data-scroll-reveal-group>
+    <!-- STAMP -->
+    <div class="team-stamp" id="team-stamp" aria-hidden="true">
+      <svg viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="110" cy="65" rx="104" ry="58" fill="var(--cream)" stroke="var(--tomato)" stroke-width="10"/>
+        <text x="110" y="80" text-anchor="middle"
+              font-family="Yellowtail, cursive"
+              font-size="38" fill="var(--tomato)"
+              transform="rotate(-8,110,65)">IEM × UEM</text>
+      </svg>
+    </div>
+
+    <p class="eyebrow-m team-eyebrow" data-scroll-reveal="lines">The people behind the events</p>
+    <h2 class="section-headline team-headline team-headline-wrap"
+        data-scroll-reveal="chars"
+        data-font-weight-hover
+        data-fw-rest="700" data-fw-near="200" data-fw-radius="400">
+      Meet <span style="font-weight:700;font-stretch:72%">the</span><br>
+      <span class="alt-word"
+            data-font-weight-hover
+            data-fw-rest="300" data-fw-near="800" data-fw-radius="400">organisers</span>
+    </h2>
+    <p class="para team-para" data-scroll-reveal="lines">
+      Twelve student coordinators and faculty mentors, one shared goal: make every event worth showing up for.
+    </p>
+  </div>
+
+  <!-- PHOTO LAYER -->
+  <div class="team-photo-layer" id="team-photo-layer" aria-label="Meet the organisers photos">
+    <!-- Photos injected by JS -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════════════ -->
+<footer id="footer" data-scroll-reveal-group>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logos">
+        <div class="footer-logo-pill">
+          <img src="logo/IEM-Logo-2019-4-1-1.png" alt="IEM logo" height="29" loading="lazy" decoding="async">
+          <div class="footer-logo-divider" role="separator"></div>
+          <img src="logo/UEM-Logo.png" alt="UEM logo" height="29" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <p class="footer-tagline" style="margin-top:.75rem">
+        Institute of Engineering and Management, under the University of Engineering and Management, Kolkata.
+      </p>
+      <p class="footer-contact" style="margin-top:.75rem">
+        <a href="mailto:events@iem-placeholder.edu">events@iem-placeholder.edu</a>
+      </p>
+    </div>
+    <nav class="footer-links" aria-label="Footer links">
+      <a class="footer-link" href="#calendar" data-draw-line>Events</a>
+      <a class="footer-link" href="#happening" data-draw-line>Schedule</a>
+      <a class="footer-link" href="#team" data-draw-line>Organisers</a>
+      <a class="footer-link" href="#calendar" data-draw-line>Register</a>
+    </nav>
+  </div>
+  <div class="footer-divider" style="width:100%;height:1px;background:rgba(250,243,228,.12);margin-bottom:1.75rem;"></div>
+  <div class="footer-bottom">
+    <div class="footer-credit-wrap">
+      <span class="footer-copy">© 2026 IEM x UEM Campus Events</span>
+      <span class="footer-sep" aria-hidden="true">•</span>
+      <span class="footer-credit">Made by Rishow Kunwar</span>
+    </div>
+    <button class="footer-top-link" id="back-to-top" aria-label="Back to top">↑ Back to top</button>
+  </div>
+</footer>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     LIBRARIES
+══════════════════════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js"></script>
+
+<script>
+/* ================================================================
+   GLOBAL CONFIG (edit these without touching anything else)
+================================================================ */
+const FEST_NAME = 'Ignite 2026';
+
+// ── EVENTS ARRAY ──────────────────────────────────────────────────
+// status: 'ongoing'|'upcoming'|'past' — used as fallback only.
+// The page computes status automatically from today's date.
+const EVENTS = [
+  {
+    id:'paper-trail',
+    title:'PAPER TRAIL',
+    category:'Poster Presentation',
+    dateStr:'16–18 Nov 2026',
+    startDate:'2026-11-16', endDate:'2026-11-18',
+    venue:'Main Atrium, IEM',
+    time:'10 AM – 6 PM',
+    desc:'Present your research to a panel of judges from academia and industry.',
+    img:'assets/events/paper-trail.webp',
+    eligible:true,
+    status:'ongoing',
+    tags:['poster'],
+    stackCard:true, stackFrame:'tomato', stackIndex:0,
+    linkId:'card-paper-trail'
+  },
+  {
+    id:'circuit-clash',
+    title:'CIRCUIT CLASH',
+    category:'Robotics',
+    dateStr:'15–17 Nov 2026',
+    startDate:'2026-11-15', endDate:'2026-11-17',
+    venue:'Innovation Lab',
+    time:'9 AM – 8 PM',
+    desc:'Build, program and pit your robot against the best in the arena.',
+    img:'assets/events/circuit-clash.webp',
+    eligible:false,
+    status:'ongoing',
+    tags:['robotics'],
+    stackCard:true, stackFrame:'sky', stackIndex:1,
+    linkId:'card-circuit-clash'
+  },
+  {
+    id:'hackhive-36',
+    title:'HACKHIVE 36',
+    category:'Hackathon',
+    dateStr:'28–29 Nov 2026',
+    startDate:'2026-11-28', endDate:'2026-11-29',
+    venue:'Auditorium + Labs',
+    time:'10 AM Sat – 10 PM Sun',
+    desc:'36 hours of building, shipping and pitching. Fuel provided.',
+    img:'assets/events/hackhive-36.webp',
+    eligible:true,
+    status:'upcoming',
+    tags:['hackathon'],
+    stackCard:true, stackFrame:'butter', stackIndex:2,
+    linkId:'card-hackhive-36'
+  },
+  {
+    id:'convergence-summit',
+    title:'CONVERGENCE SUMMIT',
+    category:'Conference',
+    dateStr:'5 Dec 2026',
+    startDate:'2026-12-05', endDate:'2026-12-05',
+    venue:'Convention Hall',
+    time:'9 AM – 5 PM',
+    desc:'Industry leaders and researchers converge for a day of talks and panels.',
+    img:'assets/events/convergence-summit.webp',
+    eligible:true,
+    status:'upcoming',
+    tags:['conference'],
+    stackCard:true, stackFrame:'sage', stackIndex:3,
+    linkId:'card-convergence-summit'
+  },
+  {
+    id:'raag-rhythm',
+    title:'RAAG & RHYTHM',
+    category:'Cultural',
+    dateStr:'12 Dec 2026',
+    startDate:'2026-12-12', endDate:'2026-12-12',
+    venue:'Open Air Theatre',
+    time:'5 PM – 10 PM',
+    desc:'An evening of classical and contemporary performances under the open sky.',
+    img:'assets/events/raag-rhythm.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['cultural'],
+    stackCard:true, stackFrame:'pink', stackIndex:4,
+    linkId:'card-raag-rhythm'
+  },
+  {
+    id:'prototype-lab',
+    title:'PROTOTYPE LAB',
+    category:'Workshop (IoT & Embedded)',
+    dateStr:'21 Nov 2026',
+    startDate:'2026-11-21', endDate:'2026-11-21',
+    venue:'Lab Block B',
+    time:'10 AM – 4 PM',
+    desc:'Hands-on with microcontrollers, sensors and the magic of hardware prototyping.',
+    img:'assets/events/prototype-lab.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['workshop'],
+    stackCard:false
+  },
+  {
+    id:'pitch-perfect',
+    title:'PITCH PERFECT',
+    category:'Startup Pitch / E-Cell',
+    dateStr:'3 Dec 2026',
+    startDate:'2026-12-03', endDate:'2026-12-03',
+    venue:'Seminar Hall',
+    time:'11 AM – 4 PM',
+    desc:'Pitch your startup idea to investors and win seed funding and mentorship.',
+    img:'assets/events/pitch-perfect.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['conference'],
+    stackCard:false
+  },
+  {
+    id:'sprint-cup',
+    title:'SPRINT CUP',
+    category:'Sports Meet',
+    dateStr:'8–10 Dec 2026',
+    startDate:'2026-12-08', endDate:'2026-12-10',
+    venue:'Campus Ground',
+    time:'7 AM – 6 PM',
+    desc:'Track and field events, relay races and outdoor sports across three days.',
+    img:'assets/events/sprint-cup.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['sports'],
+    stackCard:false
+  },
+  {
+    id:'data-drift',
+    title:'DATA DRIFT',
+    category:'Data Science Challenge',
+    dateStr:'19 Dec 2026',
+    startDate:'2026-12-19', endDate:'2026-12-19',
+    venue:'Computer Centre',
+    time:'10 AM – 6 PM',
+    desc:'Wrangle real-world datasets, build models and present your insights.',
+    img:'assets/events/data-drift.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['hackathon','workshop'],
+    stackCard:false
+  },
+  {
+    id:'research-relay',
+    title:'RESEARCH RELAY',
+    category:'Research Paper Symposium',
+    dateStr:'9 Jan 2027',
+    startDate:'2027-01-09', endDate:'2027-01-09',
+    venue:'Conference Room 1',
+    time:'10 AM – 5 PM',
+    desc:'Present your research paper and get feedback from domain experts.',
+    img:'assets/events/research-relay.webp',
+    eligible:true,
+    status:'upcoming',
+    tags:['poster','conference'],
+    stackCard:false
+  },
+  {
+    id:'build-a-bot',
+    title:'BUILD-A-BOT',
+    category:'Student Workshop',
+    dateStr:'16 Jan 2027',
+    startDate:'2027-01-16', endDate:'2027-01-16',
+    venue:'Mechatronics Lab',
+    time:'10 AM – 5 PM',
+    desc:'Assemble and program your own robot arm from scratch, guided by experts.',
+    img:'assets/events/build-a-bot.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['workshop','robotics'],
+    stackCard:false
+  },
+  {
+    id:'alumni-assemble',
+    title:'ALUMNI ASSEMBLE',
+    category:'Alumni Meet & Tech Talk',
+    dateStr:'24 Jan 2027',
+    startDate:'2027-01-24', endDate:'2027-01-24',
+    venue:'Main Auditorium',
+    time:'11 AM – 7 PM',
+    desc:'Reconnect with alumni shaping the industry and hear their stories.',
+    img:'assets/events/alumni-assemble.webp',
+    eligible:false,
+    status:'upcoming',
+    tags:['conference'],
+    stackCard:false
+  }
+];
+
+// ── TEAM PHOTOS DATA ──────────────────────────────────────────────
+const TEAM_PHOTOS = [
+  {side:'left',  offset:'max(1.5rem, 2.5vw)', top:'3%',  width:'14rem', rotate:'-4deg', speed:1,    img:'assets/team/rishow.jpeg',           type:'person', label:'Rishow',  labelAngle:'-7deg', fitPos:'center top'},
+  {side:'left',  offset:'max(1.5rem, 21vw)',  top:'19%', width:'11rem', rotate:'3deg',  speed:0.6,  img:'assets/team/setup-crew.webp',       type:'tag',    label:'SETUP CREW'},
+  {side:'left',  offset:'max(1.5rem, 3vw)',   top:'33%', width:'13rem', rotate:'5deg',  speed:1.3,  img:'assets/team/ishita.webp',           type:'person', label:'Ishita',  labelAngle:'4deg'},
+  {side:'left',  offset:'max(1.5rem, 23vw)',  top:'49%', width:'13.5rem',rotate:'-3deg',speed:0.8,  img:'assets/team/rohan.webp',            type:'person', label:'Rohan',   labelAngle:'-5deg'},
+  {side:'left',  offset:'max(1.5rem, 2vw)',   top:'64%', width:'11.5rem',rotate:'-6deg',speed:1.15, img:'assets/team/registration-desk.webp',type:'tag',    label:'REGISTRATION DESK'},
+  {side:'left',  offset:'max(1.5rem, 20vw)',  top:'79%', width:'14rem', rotate:'4deg',  speed:0.7,  img:'assets/team/ananya.webp',           type:'person', label:'Ananya',  labelAngle:'6deg'},
+  {side:'right', offset:'max(1.5rem, 3vw)',   top:'2%',  width:'13.5rem',rotate:'4deg', speed:0.75, img:'assets/team/kabir.webp',            type:'person', label:'Kabir',   labelAngle:'5deg'},
+  {side:'right', offset:'max(1.5rem, 22vw)',  top:'17%', width:'11rem', rotate:'-5deg', speed:1.25, img:'assets/team/judges-panel.webp',     type:'tag',    label:'JUDGES\' PANEL'},
+  {side:'right', offset:'max(1.5rem, 2.5vw)', top:'32%', width:'14rem', rotate:'-3deg', speed:0.9,  img:'assets/team/meera.webp',            type:'person', label:'Meera',   labelAngle:'-6deg'},
+  {side:'right', offset:'max(1.5rem, 23vw)',  top:'48%', width:'13rem', rotate:'5deg',  speed:1.4,  img:'assets/team/arjun.webp',            type:'person', label:'Arjun',   labelAngle:'4deg'},
+  {side:'right', offset:'max(1.5rem, 3vw)',   top:'63%', width:'11.5rem',rotate:'6deg', speed:0.65, img:'assets/team/late-night-coding.webp',type:'tag',    label:'LATE-NIGHT CODING'},
+  {side:'right', offset:'max(1.5rem, 20vw)',  top:'78%', width:'14rem', rotate:'-4deg', speed:1.05, img:'assets/team/tanvi.webp',            type:'person', label:'Tanvi',   labelAngle:'-4deg'}
+];
+
+/* ================================================================
+   UTILITY
+================================================================ */
+function makeImageFallbackSvg(title, w=800, h=600) {
+  const safeTitle = (title || 'IEM x UEM').replace(/[<>&"']/g, '');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+    <defs>
+      <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ef4a23"/>
+        <stop offset="50%" stop-color="#ffd46e"/>
+        <stop offset="100%" stop-color="#faf3e4"/>
+      </linearGradient>
+    </defs>
+    <rect width="${w}" height="${h}" fill="url(#g)"/>
+    <rect width="${w}" height="${h}" fill="rgba(20,17,16,0.2)"/>
+    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="${Math.max(20, Math.floor(w/16))}" fill="#141110" letter-spacing="-0.02em">${safeTitle}</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+
+function handleImageError(img, title, w=800, h=600) {
+  console.warn('Image failed to load, applying fallback for:', title, img.src);
+  img.onerror = null;
+  img.src = makeImageFallbackSvg(title, w, h);
+}
+function computeStatus(ev) {
+  const now = new Date();
+  const start = new Date(ev.startDate);
+  const end = new Date(ev.endDate);
+  end.setHours(23,59,59,999);
+  if (now > end) return 'past';
+  if (now >= start) return 'ongoing';
+  return 'upcoming';
+}
+
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isFine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+/* ================================================================
+   DRAW-UNDERLINE PATHS
+================================================================ */
+const DRAW_PATHS = [
+  'M5 20.9999C26.7762 16.2245 49.5532 11.5572 71.7979 14.6666C84.9553 16.5057 97.0392 21.8432 109.987 24.3888C116.413 25.6523 123.012 25.5143 129.042 22.6388C135.981 19.3303 142.586 15.1422 150.092 13.3333C156.799 11.7168 161.702 14.6225 167.887 16.8333C181.562 21.7212 194.975 22.6234 209.252 21.3888C224.678 20.0548 239.912 17.991 255.42 18.3055C272.027 18.6422 288.409 18.867 305 17.9999',
+  'M5 24.2592C26.233 20.2879 47.7083 16.9968 69.135 13.8421C98.0469 9.5853 128.407 4.02322 158.059 5.14674C172.583 5.69708 187.686 8.66104 201.598 11.9696C207.232 13.3093 215.437 14.9471 220.137 18.3619C224.401 21.4596 220.737 25.6575 217.184 27.6168C208.309 32.5097 197.199 34.281 186.698 34.8486C183.159 35.0399 147.197 36.2657 155.105 26.5837C158.11 22.9053 162.993 20.6229 167.764 18.7924C178.386 14.7164 190.115 12.1115 201.624 10.3984C218.367 7.90626 235.528 7.06127 252.521 7.49276C258.455 7.64343 264.389 7.92791 270.295 8.41825C280.321 9.25056 296 10.8932 305 13.0242',
+  'M5 29.5014C9.61174 24.4515 12.9521 17.9873 20.9532 17.5292C23.7742 17.3676 27.0987 17.7897 29.6575 19.0014C33.2644 20.7093 35.6481 24.0004 39.4178 25.5014C48.3911 29.0744 55.7503 25.7731 63.3048 21.0292C67.9902 18.0869 73.7668 16.1366 79.3721 17.8903C85.1682 19.7036 88.2173 26.2464 94.4121 27.2514C102.584 28.5771 107.023 25.5064 113.276 20.6125C119.927 15.4067 128.83 12.3333 137.249 15.0014C141.418 16.3225 143.116 18.7528 146.581 21.0014C149.621 22.9736 152.78 23.6197 156.284 24.2514C165.142 25.8479 172.315 17.5185 179.144 13.5014C184.459 10.3746 191.785 8.74853 195.868 14.5292C199.252 19.3205 205.597 22.9057 211.621 22.5014C215.553 22.2374 220.183 17.8356 222.979 15.5569C225.4 13.5845 227.457 11.1105 230.742 10.5292C232.718 10.1794 234.784 12.9691 236.164 14.0014C238.543 15.7801 240.717 18.4775 243.356 19.8903C249.488 23.1729 255.706 21.2551 261.079 18.0014C266.571 14.6754 270.439 11.5202 277.146 13.6125C280.725 14.7289 283.221 17.209 286.393 19.0014C292.321 22.3517 298.255 22.5014 305 22.5014',
+  'M17.0039 32.6826C32.2307 32.8412 47.4552 32.8277 62.676 32.8118C67.3044 32.807 96.546 33.0555 104.728 32.0775C113.615 31.0152 104.516 28.3028 102.022 27.2826C89.9573 22.3465 77.3751 19.0254 65.0451 15.0552C57.8987 12.7542 37.2813 8.49399 44.2314 6.10216C50.9667 3.78422 64.2873 5.81914 70.4249 5.96641C105.866 6.81677 141.306 7.58809 176.75 8.59886C217.874 9.77162 258.906 11.0553 300 14.4892',
+  'M4.99805 20.9998C65.6267 17.4649 126.268 13.845 187.208 12.8887C226.483 12.2723 265.751 13.2796 304.998 13.9998',
+  'M5 29.8857C52.3147 26.9322 99.4329 21.6611 146.503 17.1765C151.753 16.6763 157.115 15.9505 162.415 15.6551C163.28 15.6069 165.074 15.4123 164.383 16.4275C161.704 20.3627 157.134 23.7551 153.95 27.4983C153.209 28.3702 148.194 33.4751 150.669 34.6605C153.638 36.0819 163.621 32.6063 165.039 32.2029C178.55 28.3608 191.49 23.5968 204.869 19.5404C231.903 11.3436 259.347 5.83254 288.793 5.12258C294.094 4.99476 299.722 4.82265 305 5.45025'
+];
+let drawIdx = Math.floor(Math.random() * DRAW_PATHS.length);
+
+/* ================================================================
+   MARQUEE SVG ICONS
+================================================================ */
+const MARQUEE_ICONS = [
+  // asterisk
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><g stroke="var(--cream)" stroke-width="5" stroke-linecap="round"><line x1="30" y1="6" x2="30" y2="54"/><line x1="6" y1="30" x2="54" y2="30"/><line x1="12.7" y1="12.7" x2="47.3" y2="47.3"/><line x1="47.3" y1="12.7" x2="12.7" y2="47.3"/><line x1="30" y1="6" x2="30" y2="6"/></g></svg>`,
+  // capsule D shapes
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><rect x="6" y="10" width="20" height="40" rx="10" fill="none" stroke="var(--cream)" stroke-width="5"/><rect x="34" y="10" width="20" height="40" rx="10" fill="none" stroke="var(--cream)" stroke-width="5"/></svg>`,
+  // wavy lines
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><path d="M5 18 C15 8,25 28,35 18,45 8,55 28,55 18" fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><path d="M5 30 C15 20,25 40,35 30,45 20,55 40,55 30" fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><path d="M5 42 C15 32,25 52,35 42,45 32,55 52,55 42" fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/></svg>`,
+  // 4 diamonds
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><rect x="23" y="5" width="14" height="14" rx="2" transform="rotate(45 30 12)" fill="var(--cream)"/><rect x="5" y="23" width="14" height="14" rx="2" transform="rotate(45 12 30)" fill="var(--cream)"/><rect x="41" y="23" width="14" height="14" rx="2" transform="rotate(45 48 30)" fill="var(--cream)"/><rect x="23" y="41" width="14" height="14" rx="2" transform="rotate(45 30 48)" fill="var(--cream)"/></svg>`,
+  // half sun + bars
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><path d="M10 30 A20 20 0 0 1 50 30" fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><line x1="30" y1="4" x2="30" y2="12" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><line x1="10" y1="37" x2="50" y2="37" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><line x1="10" y1="46" x2="50" y2="46" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><line x1="10" y1="55" x2="50" y2="55" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/></svg>`,
+  // two arches
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><path d="M8 50 A18 25 0 0 1 32 50" fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><path d="M28 50 A18 25 0 0 1 52 50" fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/></svg>`,
+  // sparkle
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><path d="M30 5 L33 25 L53 28 L33 31 L30 55 L27 31 L7 28 L27 25 Z" fill="var(--cream)"/></svg>`,
+  // circle + cross
+  `<svg viewBox="0 0 60 60" class="marquee-icon" aria-hidden="true"><circle cx="30" cy="30" r="22" fill="none" stroke="var(--cream)" stroke-width="5"/><line x1="30" y1="8" x2="30" y2="52" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/><line x1="8" y1="30" x2="52" y2="30" stroke="var(--cream)" stroke-width="5" stroke-linecap="round"/></svg>`
+];
+const MARQUEE_LABELS = ['HACKATHON','CONFERENCE','POSTER SHOWCASE','WORKSHOP','ROBOTICS','CULTURAL','TECH TALK','SPORTS'];
+
+/* ================================================================
+   BUILD DOM
+================================================================ */
+function buildMarquee() {
+  const scroll = document.getElementById('marquee-scroll');
+  function makeCollection() {
+    const col = document.createElement('div');
+    col.className = 'marquee-collection';
+    MARQUEE_ICONS.forEach((svg,i) => {
+      const item = document.createElement('div');
+      item.className = 'marquee-item';
+      item.innerHTML = svg + `<span class="marquee-label">${MARQUEE_LABELS[i]}</span>`;
+      col.appendChild(item);
+    });
+    return col;
+  }
+  // 3 copies for seamless loop
+  for(let i=0;i<3;i++) scroll.appendChild(makeCollection());
+}
+
+function buildStackCards() {
+  const root = document.getElementById('stack-root');
+  const stackEvents = EVENTS.filter(e => e.stackCard).sort((a,b) => a.stackIndex - b.stackIndex);
+  stackEvents.forEach((ev, i) => {
+    const status = computeStatus(ev);
+    const slide = document.createElement('a');
+    slide.className = 'stack-slide';
+    slide.href = `#${ev.linkId || ev.id}`;
+    slide.id = `stack-${ev.id}`;
+    slide.setAttribute('data-cursor-marquee-text', 'Register ->');
+    slide.setAttribute('aria-label', `${ev.title} — ${ev.category}, ${ev.dateStr}`);
+    const frameColour = {tomato:'var(--tomato)',sky:'var(--sky)',butter:'var(--butter)',sage:'var(--sage)',pink:'var(--pink)'}[ev.stackFrame] || 'var(--tomato)';
+    slide.innerHTML = `
+      <div class="slide-frame" style="background:${frameColour}">
+        <div class="slide-crop">
+          <img src="${ev.img}" alt="${ev.title}" loading="lazy" decoding="async"
+               style="background:#e9dcc6;"
+               onerror="handleImageError(this, '${ev.title.replace(/'/g, "\\'")}', 800, 600)">
+          <div class="slide-gradient"></div>
+        </div>
+        <span class="status-chip ${status}" aria-label="Status: ${status}">
+          <span class="chip-dot" aria-hidden="true"></span>${status.toUpperCase()}
+        </span>
+        <div class="slide-title">${ev.title}</div>
+        <div class="slide-meta">
+          <div class="slide-date-cat">${ev.dateStr} · ${ev.category}</div>
+        </div>
+      </div>`;
+    root.appendChild(slide);
+  });
+}
+
+function buildCalendar() {
+  // Filter pills
+  const filters = ['ALL','ONGOING','UPCOMING','HACKATHON','CONFERENCE','POSTER','WORKSHOP','CULTURAL','SPORTS'];
+  const filterRow = document.getElementById('filter-row');
+  filters.forEach(f => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-pill' + (f==='ALL' ? ' active' : '');
+    btn.textContent = f;
+    btn.setAttribute('aria-pressed', f==='ALL' ? 'true' : 'false');
+    btn.dataset.filter = f;
+    filterRow.appendChild(btn);
+  });
+
+  // Event cards
+  const grid = document.getElementById('events-grid');
+  EVENTS.forEach(ev => {
+    const status = computeStatus(ev);
+    const card = document.createElement('article');
+    card.className = 'event-card';
+    card.id = ev.id;
+    card.role = 'listitem';
+    card.setAttribute('data-cursor-marquee-text','Register ->');
+    card.dataset.tags = ev.tags.join(',');
+    card.dataset.status = status;
+
+    const eligibleHtml = ev.eligible
+      ? `<div class="event-card-eligible">Open to IEM and UEM students</div>`
+      : '';
+
+    card.innerHTML = `
+      <div class="event-card-img-wrap">
+        <img class="event-card-img" src="${ev.img}"
+             alt="${ev.title} — ${ev.category}" loading="lazy" decoding="async"
+             onerror="handleImageError(this, '${ev.title.replace(/'/g, "\\'")}', 800, 600)">
+      </div>
+      <div class="event-card-body">
+        <div class="event-card-top">
+          <span class="event-card-category">${ev.category}</span>
+          <span class="event-card-chip ${status}" aria-label="Status: ${status}">
+            ${status==='ongoing'?'<span class="chip-dot" aria-hidden="true"></span>':''}
+            ${status.toUpperCase()}
+          </span>
+        </div>
+        <div class="event-card-title">${ev.title}</div>
+        <div class="event-card-when">${ev.dateStr} · ${ev.time}<br>${ev.venue}</div>
+        <div class="event-card-desc">${ev.desc}</div>
+        ${eligibleHtml}
+        <button class="event-card-register" data-event-id="${ev.id}"
+                aria-label="Register for ${ev.title}">
+          <span class="event-register-text">Register ->
+            <svg class="event-card-register-underline draw-line"
+                 viewBox="0 0 310 40" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+          </span>
+        </button>
+      </div>`;
+    grid.appendChild(card);
+  });
+
+  // Filter logic
+  filterRow.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-pill');
+    if(!btn) return;
+    filterRow.querySelectorAll('.filter-pill').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed','false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed','true');
+    const f = btn.dataset.filter;
+    const cards = grid.querySelectorAll('.event-card');
+    cards.forEach(card => {
+      let show = false;
+      if(f === 'ALL') show = true;
+      else if(f === 'ONGOING') show = card.dataset.status === 'ongoing';
+      else if(f === 'UPCOMING') show = card.dataset.status === 'upcoming';
+      else show = card.dataset.tags.includes(f.toLowerCase());
+
+      if(show) {
+        card.style.display = '';
+        gsap.fromTo(card,
+          { y:24, autoAlpha:0 },
+          { y:0, autoAlpha:1, duration:.5, ease:'expo.out' }
+        );
+      } else {
+        gsap.to(card, { autoAlpha:0, y:24, duration:.3, ease:'expo.out',
+          onComplete:() => { card.style.display = 'none'; } });
+      }
+    });
+  });
+}
+
+function fitStickers() {
+  document.querySelectorAll('.photo-name').forEach(sticker => {
+    const parent = sticker.parentElement;
+    if(!parent) return;
+    const maxW = parent.clientWidth - 12;
+    let fs = parseFloat(window.getComputedStyle(sticker).fontSize);
+    let iter = 0;
+    while(sticker.scrollWidth > maxW && fs > 14 && iter < 30) {
+      fs -= 0.8;
+      sticker.style.fontSize = fs + 'px';
+      iter++;
+    }
+  });
+}
+
+function buildTeamPhotos() {
+  const layer = document.getElementById('team-photo-layer');
+  const isPhone = window.innerWidth <= 600;
+  // Phone: separate left/right arrays for top positioning
+  let leftIdx = 0, rightIdx = 0;
+  const leftTops  = ['1%','17%','33%','49%','65%','81%'];
+  const rightTops = ['9%','25%','41%','57%','73%','89%'];
+
+  TEAM_PHOTOS.forEach((p, i) => {
+    const el = document.createElement('div');
+    el.className = 'team-photo';
+    el.dataset.speed = p.speed;
+    el.dataset.side = p.side;
+
+    if(isPhone) {
+      el.style.width = '8rem';
+      el.style.aspectRatio = '4/5';
+      if(p.side === 'left') {
+        el.style.left = leftIdx % 2 === 0 ? '1.5rem' : '4.5rem';
+        el.style.top = leftTops[leftIdx] || (leftIdx*16 + '%');
+        leftIdx++;
+      } else {
+        el.style.right = rightIdx % 2 === 0 ? '1.5rem' : '4.5rem';
+        el.style.top = rightTops[rightIdx] || (rightIdx*16 + '%');
+        rightIdx++;
+      }
+    } else {
+      el.style.width = p.width;
+      el.style[p.side] = p.offset;
+      el.style.top = p.top;
+      el.style.rotate = p.rotate;
+      el.style.aspectRatio = '4/5';
+    }
+
+    el.innerHTML = `
+      <div class="team-photo-img-wrap">
+        <img src="${p.img}" alt="${p.type==='person'?p.label:p.label}" loading="eager" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:${p.fitPos || 'center'};" onerror="handleImageError(this, '${p.label.replace(/'/g, "\\'")}', 600, 800)">
+      </div>
+    `;
+
+    if(p.type === 'person') {
+      const sticker = document.createElement('div');
+      sticker.className = 'photo-name';
+      sticker.textContent = p.label;
+      sticker.style.rotate = p.labelAngle || '0deg';
+      el.appendChild(sticker);
+    } else {
+      const tag = document.createElement('div');
+      tag.className = 'photo-tag';
+      tag.textContent = p.label;
+      el.appendChild(tag);
+    }
+    layer.appendChild(el);
+  });
+
+  // Fit stickers so no text is ever clipped
+  fitStickers();
+  window.addEventListener('resize', fitStickers, { passive: true });
+}
+
+/* ================================================================
+   REGISTRATION MODAL
+================================================================ */
+function setupModal() {
+  const overlay = document.getElementById('modal-overlay');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const submitBtn = document.getElementById('modal-submit');
+  const form = document.getElementById('modal-form');
+  const success = document.getElementById('modal-success');
+  let currentEventId = null;
+
+  function openModal(eventId) {
+    const ev = EVENTS.find(e => e.id === eventId);
+    currentEventId = eventId;
+    document.getElementById('modal-event-name').textContent = ev ? ev.title : '';
+    form.classList.remove('hide');
+    success.classList.remove('show');
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    // Trap focus
+    setTimeout(() => closeBtn.focus(), 100);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  // Open on register click
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-event-id]');
+    if(btn) { openModal(btn.dataset.eventId); return; }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  // Focus trap inside modal
+  overlay.addEventListener('keydown', e => {
+    if(!overlay.classList.contains('open')) return;
+    const focusable = overlay.querySelectorAll('button,input,[href],[tabindex]:not([tabindex="-1"])');
+    const first = focusable[0], last = focusable[focusable.length-1];
+    if(e.key === 'Tab') {
+      if(e.shiftKey) { if(document.activeElement===first){e.preventDefault();last.focus();} }
+      else { if(document.activeElement===last){e.preventDefault();first.focus();} }
+    }
+  });
+
+  // Submit
+  submitBtn.addEventListener('click', () => {
+    const name = document.getElementById('reg-name').value.trim();
+    const email = document.getElementById('reg-email').value.trim();
+    const id = document.getElementById('reg-id').value.trim();
+    if(!name || !email || !id) {
+      // Simple validation highlight
+      [document.getElementById('reg-name'),document.getElementById('reg-email'),document.getElementById('reg-id')]
+        .forEach(inp => {
+          if(!inp.value.trim()) inp.style.borderColor = 'var(--tomato)';
+          else inp.style.borderColor = '';
+        });
+      return;
+    }
+    // Store in localStorage (demo only — no backend)
+    const reg = JSON.parse(localStorage.getItem('iem_registrations') || '[]');
+    reg.push({ event: currentEventId, name, email, college_id: id, ts: Date.now() });
+    localStorage.setItem('iem_registrations', JSON.stringify(reg));
+    // Show success
+    form.classList.add('hide');
+    success.classList.add('show');
+    setTimeout(() => closeBtn.focus(), 50);
+  });
+}
+
+/* ================================================================
+   INIT
+================================================================ */
+function initPage() {
+  /* ── LENIS ──────────────────────────────────────────────── */
+  let lenis;
+  if(!RM) {
+    lenis = new Lenis({ lerp:0.165, wheelMultiplier:1.25 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function smoothScrollTo(target) {
+    if(RM) {
+      const el = typeof target === 'string' ? document.querySelector(target) : target;
+      if(el) el.scrollIntoView({behavior:'smooth'});
+    } else if(lenis) {
+      lenis.scrollTo(target, { duration:1.4 });
+    }
+  }
+
+  // Smooth scroll all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if(href === '#') { e.preventDefault(); smoothScrollTo(0); return; }
+      const target = document.querySelector(href);
+      if(target) { e.preventDefault(); smoothScrollTo(target); }
+    });
+  });
+  document.getElementById('back-to-top').addEventListener('click', () => smoothScrollTo(0));
+
+  /* ── TEXT REVEAL ────────────────────────────────────────── */
+  if(!RM) {
+    const revealEls = document.querySelectorAll('[data-text-reveal]');
+    revealEls.forEach(el => {
+      const mode = el.dataset.textReveal;
+      const hasFwHover = el.dataset.fontWeightHover !== undefined || el.closest('[data-font-weight-hover]');
+      const st = SplitText.create(el, {
+        type: mode==='chars' ? 'chars,words,lines' : 'lines,words',
+        linesClass:'line',
+        charsClass:'char',
+        mask:'lines',
+        autoSplit: hasFwHover ? false : true
+      });
+      const targets = mode==='chars' ? st.chars : st.lines;
+      const staggerVal = mode==='chars' ? 0.0175 : 0.07;
+      gsap.from(targets, {
+        yPercent:135, duration:1, ease:'expo.out',
+        stagger:staggerVal, delay:0.6,
+        onComplete(){ el.dispatchEvent(new Event('revealdone', {bubbles:true})); }
+      });
+    });
+  } else {
+    // Reduced motion: show everything
+    document.querySelectorAll('[data-text-reveal],[data-scroll-reveal]')
+      .forEach(el => { el.style.visibility='visible'; });
+  }
+
+  /* ── SCROLL REVEALS ─────────────────────────────────────── */
+  if(!RM) {
+    document.querySelectorAll('[data-scroll-reveal-group]').forEach(group => {
+      let delay = 0;
+      group.querySelectorAll('[data-scroll-reveal]').forEach(el => {
+        const mode = el.dataset.scrollReveal;
+        ScrollTrigger.create({
+          trigger: group,
+          start:'top 85%',
+          once:true,
+          onEnter(){
+            if(mode === 'element') {
+              gsap.fromTo(el,
+                {y:24, autoAlpha:0},
+                {y:0, autoAlpha:1, duration:.8, ease:'expo.out', delay}
+              );
+            } else {
+              const st2 = SplitText.create(el, {
+                type: mode==='chars' ? 'chars,words,lines' : 'lines,words',
+                linesClass:'line', charsClass:'char', mask:'lines', autoSplit:false
+              });
+              const targets2 = mode==='chars' ? st2.chars : st2.lines;
+              const staggerVal2 = mode==='chars' ? 0.0175 : 0.07;
+              gsap.from(targets2, {
+                yPercent:135, duration:1, ease:'expo.out',
+                stagger:staggerVal2, delay,
+                onComplete(){ el.dispatchEvent(new Event('revealdone',{bubbles:true})); }
+              });
+            }
+            delay += 0.12;
+          }
+        });
+      });
+    });
+  }
+
+  /* ── DRAW UNDERLINE ─────────────────────────────────────── */
+  function setupDrawLine(el, alwaysOn=false) {
+    const svg = el.querySelector('svg.draw-line, svg[class*="draw-line"], .draw-line svg, svg.nav-link-underline');
+    // Find the SVG inside or is the element itself
+    let svgEl = el.querySelector('svg');
+    if(!svgEl) return;
+    let pathEl = svgEl.querySelector('path');
+    if(!pathEl) return;
+
+    function insertPath() {
+      const d = DRAW_PATHS[drawIdx % DRAW_PATHS.length];
+      drawIdx++;
+      pathEl.setAttribute('d', d);
+      return pathEl;
+    }
+
+    if(alwaysOn) {
+      insertPath();
+      gsap.fromTo(pathEl,
+        { drawSVG:'0%' },
+        { drawSVG:'100%', duration:0.6, ease:'power2.inOut', delay:1.3 }
+      );
+      return;
+    }
+
+    el.addEventListener('mouseenter', () => {
+      insertPath();
+      gsap.killTweensOf(pathEl);
+      gsap.fromTo(pathEl,
+        { drawSVG:'0%' },
+        { drawSVG:'100%', duration:0.5, ease:'power2.inOut' }
+      );
+    });
+    el.addEventListener('mouseleave', () => {
+      gsap.to(pathEl, {
+        drawSVG:'100% 100%', duration:0.5, ease:'power2.inOut',
+        onComplete(){ pathEl.setAttribute('d',''); }
+      });
+    });
+  }
+
+  document.querySelectorAll('[data-draw-line]').forEach(el => setupDrawLine(el));
+  const heroCtaEl = document.getElementById('hero-cta');
+  if(heroCtaEl) setupDrawLine(heroCtaEl, true);
+
+  // Also setup draw-line on event card register buttons
+  document.querySelectorAll('.event-card-register').forEach(btn => {
+    const svgEl = btn.querySelector('svg');
+    if(!svgEl) return;
+    const pathEl = svgEl.querySelector('path');
+    if(!pathEl) return;
+    btn.addEventListener('mouseenter', () => {
+      const d = DRAW_PATHS[drawIdx % DRAW_PATHS.length]; drawIdx++;
+      pathEl.setAttribute('d',d);
+      gsap.killTweensOf(pathEl);
+      gsap.fromTo(pathEl,{drawSVG:'0%'},{drawSVG:'100%',duration:.5,ease:'power2.inOut'});
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(pathEl,{drawSVG:'100% 100%',duration:.5,ease:'power2.inOut',
+        onComplete(){ pathEl.setAttribute('d',''); }});
+    });
+  });
+
+  /* ── FONT-WEIGHT HOVER ──────────────────────────────────── */
+  if(!RM && !isTouch) {
+    function setupFwHover(el) {
+      const rest  = parseFloat(el.dataset.fwRest  || el.closest('[data-fw-rest]')?.dataset.fwRest  || 700);
+      const near  = parseFloat(el.dataset.fwNear  || el.closest('[data-fw-near]')?.dataset.fwNear  || 200);
+      const radius= parseFloat(el.dataset.fwRadius|| el.closest('[data-fw-radius]')?.dataset.fwRadius|| 400);
+
+      // Wait for revealdone or split now
+      function doSplit() {
+        const existing = el._splitChars;
+        if(existing) return existing;
+        const st = SplitText.create(el,{type:'chars,words,lines',linesClass:'line',charsClass:'char',mask:'lines',autoSplit:false});
+        el._splitChars = st.chars;
+        return st.chars;
+      }
+
+      function setupChars(chars) {
+        const wdth = el.style.fontStretch || (el.className.includes('alt-word') ? '87.5%' : '72%');
+        chars.forEach(ch => {
+          const opsz = el.className.includes('alt-word') ? 120 : (el.dataset.opsz || 20);
+          ch.style.fontVariationSettings = `'wght' ${rest},'wdth' ${el.className.includes('alt-word')?87.5:72},'opsz' ${el.className.includes('alt-word')?120:20}`;
+          ch._fwRest = rest; ch._fwNear = near; ch._fwRadius = radius;
+        });
+        return chars;
+      }
+
+      let chars = [];
+      function init() {
+        chars = setupChars(doSplit());
+        measureChars();
+      }
+
+      let charCentres = [];
+      function measureChars() {
+        charCentres = chars.map(ch => {
+          const r = ch.getBoundingClientRect();
+          return { x: r.left + r.width/2 + window.scrollX, y: r.top + r.height/2 + window.scrollY };
+        });
+      }
+
+      window.addEventListener('resize', measureChars);
+      window.addEventListener('scroll', measureChars, {passive:true});
+
+      const quickTos = new WeakMap();
+      function getQT(ch) {
+        if(!quickTos.has(ch)) {
+          quickTos.set(ch, gsap.quickTo(ch, '--wght', {duration:.4, ease:'power2.out'}));
+        }
+        return quickTos.get(ch);
+      }
+
+      function onTick() {
+        if(!_mousePageX) return;
+        chars.forEach((ch,i) => {
+          const c = charCentres[i];
+          if(!c) return;
+          const d = Math.hypot(_mousePageX - c.x, _mousePageY - c.y);
+          const f = d >= radius ? 0 : 1 - d/radius;
+          const target = Math.min(Math.max(rest + (near - rest) * f, Math.min(rest,near)), Math.max(rest,near));
+          if(Math.abs(target - (ch._lastWght||rest)) >= 1) {
+            ch._lastWght = target;
+            getQT(ch)(target);
+          }
+        });
+      }
+
+      el.addEventListener('revealdone', init);
+      if(el.dataset.textReveal === undefined) init();
+      else {
+        // also init after scroll reveal fires
+        setTimeout(init, 500);
+      }
+
+      gsap.ticker.add(onTick);
+    }
+
+    document.querySelectorAll('[data-font-weight-hover]').forEach(el => setupFwHover(el));
+  }
+
+  /* ── HERO CURSOR CARD ───────────────────────────────────── */
+  if(isFine && !RM) {
+    const hero = document.getElementById('hero');
+    const card = document.getElementById('hero-cursor-card');
+    const media = document.getElementById('hero-card-media');
+    const photos = card.querySelectorAll('.hero-card-photo');
+    let photoIdx = 0, travel = 0, lastX = 0, lastY = 0, resetTimer = null;
+    let isActive = false;
+    let firstMove = true;
+
+    const qX = gsap.quickTo(card, 'x', {duration:1, ease:'power4'});
+    const qY = gsap.quickTo(card, 'y', {duration:1, ease:'power4'});
+    const qRot = gsap.quickTo(card, 'rotation', {duration:1, ease:'power4'});
+    const qXP = gsap.quickTo(media, 'xPercent', {duration:.6, ease:'power2'});
+    const qYP = gsap.quickTo(media, 'yPercent', {duration:.7, ease:'power2'});
+
+    function switchPhoto() {
+      photos[photoIdx].classList.remove('on');
+      photoIdx = (photoIdx + 1) % photos.length;
+      photos[photoIdx].classList.add('on');
+    }
+
+    hero.addEventListener('mousemove', e => {
+      const heroRect = hero.getBoundingClientRect();
+      const x = e.clientX - window.innerWidth/2;
+      const y = e.clientY - window.innerHeight/2 - heroRect.top;
+      const overLink = e.target.closest('a,button');
+
+      if(overLink) {
+        gsap.to(card, {autoAlpha:0, duration:.25, ease:'power2.out'});
+        return;
+      }
+
+      if(!isActive) {
+        isActive = true;
+        gsap.to(card, {autoAlpha:1, duration:.3});
+      }
+      if(firstMove) {
+        gsap.set(card, {x, y}); firstMove = false;
+      }
+
+      const dx = (x - lastX) ** 2;
+      const dy = (y - lastY) ** 2;
+      const rot = (x - lastX) / 4;
+      qX(x); qY(y); qRot(rot);
+      qXP(-Math.min(8, Math.max(-8, x - lastX)));
+      qYP(-Math.min(8, Math.max(-8, y - lastY)));
+      travel += Math.sqrt(dx + dy);
+      if(travel > 300) { travel = 0; switchPhoto(); }
+      lastX = x; lastY = y;
+
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => { qRot(0); qXP(0); qYP(0); }, 66);
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      isActive = false; firstMove = true;
+      gsap.to(card, {autoAlpha:0, duration:.3});
+    });
+  }
+
+  /* ── MARQUEE ───────────────────────────────────────────── */
+  if(!RM) {
+    const scroll = document.getElementById('marquee-scroll');
+    const collections = scroll.querySelectorAll('.marquee-collection');
+    const colW = collections[0].offsetWidth;
+    const vpW = window.innerWidth;
+    const isSmall = vpW <= 991;
+    const isTiny = vpW <= 479;
+    const f = isTiny ? 0.25 : (isSmall ? 0.5 : 1);
+    const speed = 30;
+    const dur = speed * (colW / vpW) * f;
+    const tl = gsap.to(collections, {
+      xPercent:-100, repeat:-1, duration:dur, ease:'linear',
+      startAt:{xPercent:-100}
+    });
+    tl.progress(0.5);
+
+    ScrollTrigger.create({
+      trigger:'#marquee-wrap',
+      start:'top bottom', end:'bottom top',
+      onUpdate(st) { tl.timeScale(st.direction === 1 ? -1 : 1); }
+    });
+
+    // Parallax scroll on the wrap
+    gsap.fromTo('#marquee-scroll',
+      { x:'10vw' },
+      {
+        x:'-10vw',
+        ease:'none',
+        scrollTrigger:{
+          trigger:'#marquee-wrap',
+          start:'top bottom', end:'bottom top',
+          scrub:0
+        }
+      }
+    );
+  }
+
+  /* ── 3D CARD STACK ──────────────────────────────────────── */
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 992px)', () => {
+    const slides = document.querySelectorAll('.stack-slide');
+    if(!slides.length) return;
+    const count = slides.length;
+    const DEPTH = 120, OFFSET = 40, TILT_X = 6, TILT_Y = 10;
+    const root = document.getElementById('stack-root');
+
+    // Initial z positions
+    slides.forEach((slide, b) => {
+      gsap.set(slide, { z:-b*DEPTH, y:-b*OFFSET, zIndex:count-b, autoAlpha:1 });
+    });
+
+    // Build timeline
+    const tl = gsap.timeline({ paused:true });
+    for(let b=0; b<count-1; b++) {
+      // Slide b peels off
+      tl.to(slides[b], { y: `+=${window.innerHeight * 0.9}`, ease:'power2.in', duration:1, autoAlpha:0 }, b);
+      tl.to(slides[b], { autoAlpha:0, duration:0.25 }, b + 0.7);
+      // All slides behind move forward
+      for(let j=b+1; j<count; j++) {
+        const C = j - b - 1;
+        tl.to(slides[j], { z:-C*DEPTH, y:-C*OFFSET, ease:'linear', duration:1 }, b);
+      }
+    }
+    // Badge spin
+    tl.to('#stack-badge', { rotation:180, ease:'linear', duration:count-1 }, 0);
+
+    ScrollTrigger.create({
+      trigger:'#happening',
+      start:'top top',
+      end:`+=${window.innerHeight * 1.2 * (count-1)}`,
+      pin:'#happening-pin',
+      pinSpacing:true,
+      scrub:0.3,
+      refreshPriority:1,
+      invalidateOnRefresh:true,
+      onUpdate(st) { tl.progress(st.progress); }
+    });
+
+    // Mouse tilt
+    if(!RM) {
+      const pin = document.getElementById('happening-pin');
+      const qRX = gsap.quickTo(root, 'rotationX', {duration:.6, ease:'power3'});
+      const qRY = gsap.quickTo(root, 'rotationY', {duration:.6, ease:'power3'});
+      pin.addEventListener('mousemove', e => {
+        const r = pin.getBoundingClientRect();
+        const rx = -((e.clientY - r.top) / r.height - .5) * TILT_X;
+        const ry = ((e.clientX - r.left) / r.width - .5) * TILT_Y;
+        qRX(rx); qRY(ry);
+      });
+      pin.addEventListener('mouseleave', () => { qRX(0); qRY(0); });
+    }
+  });
+
+  /* ── CURSOR LABEL ───────────────────────────────────────── */
+  if(isFine) {
+    const label = document.getElementById('cursor-label');
+    const card = document.getElementById('cursor-label-card');
+    const inner = card.querySelector('.cursor-label-inner');
+    const spans = inner.querySelectorAll('span');
+    const qX = gsap.quickTo(label, 'x', {duration:.4, ease:'power3'});
+    const qY = gsap.quickTo(label, 'y', {duration:.4, ease:'power3'});
+    let activeEl = null, deactivateTimer = null;
+    let firstMoveL = true;
+
+    function activate(el) {
+      const text = el.dataset.cursorMarqueeText || 'Register ->';
+      spans.forEach(s => { s.textContent = text + '\u00a0\u00a0\u00a0'; });
+      const dur = `${Math.max(2, text.length / 4)}s`;
+      inner.style.animationDuration = dur;
+      inner.style.animationPlayState = 'running';
+      label.dataset.cursorMarqueeStatus = 'active';
+    }
+    function deactivate() {
+      label.dataset.cursorMarqueeStatus = '';
+      inner.style.animationPlayState = 'paused';
+    }
+
+    document.addEventListener('pointermove', e => {
+      if(firstMoveL) {
+        gsap.set(label, { x: e.clientX, y: e.clientY, xPercent: -50, yPercent: -50 });
+        firstMoveL = false;
+      }
+      qX(e.clientX); qY(e.clientY);
+      const hit = document.elementFromPoint(e.clientX, e.clientY);
+      const el = hit?.closest('[data-cursor-marquee-text]');
+      if(el && el !== activeEl) {
+        activeEl = el; clearTimeout(deactivateTimer); activate(el);
+      } else if(!el && activeEl) {
+        activeEl = null;
+        deactivateTimer = setTimeout(deactivate, 300);
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      activeEl = null;
+      deactivate();
+    });
+  }
+
+  /* ── TEAM PARALLAX ──────────────────────────────────────── */
+  {
+    const teamSection = document.getElementById('team');
+    const photos = teamSection.querySelectorAll('.team-photo');
+    const mmTeam = gsap.matchMedia();
+
+    mmTeam.add({
+      desktop:'(min-width:992px)',
+      tablet:'(min-width:480px) and (max-width:991px)',
+      mobile:'(max-width:479px)',
+      reduced:'(prefers-reduced-motion:reduce)'
+    }, ctx => {
+      const { desktop, tablet, mobile, reduced } = ctx.conditions;
+      if(reduced) return;
+      const k = desktop ? 1 : (tablet ? 0.5 : 0.3);
+      const dist = 320 * k;
+      photos.forEach((photo, i) => {
+        const speed = parseFloat(photo.dataset.speed || 1);
+        gsap.fromTo(photo,
+          { y: dist * speed },
+          {
+            y: -dist * speed,
+            ease:'none',
+            scrollTrigger:{
+              trigger: teamSection,
+              start:'clamp(top bottom)',
+              end:'clamp(bottom top)',
+              scrub:true,
+              invalidateOnRefresh:true,
+              refreshPriority:-1
+            }
+          }
+        );
+      });
+    });
+  }
+
+  /* ── MOMENTUM HOVER ─────────────────────────────────────── */
+  if(isFine && !RM) {
+    const teamSection = document.getElementById('team');
+    let vx = 0, vy = 0, lastPX = 0, lastPY = 0;
+    gsap.ticker.add(() => {});
+
+    teamSection.addEventListener('mousemove', e => {
+      vx = e.clientX - lastPX; vy = e.clientY - lastPY;
+      lastPX = e.clientX; lastPY = e.clientY;
+    });
+
+    teamSection.querySelectorAll('.team-photo, #team-stamp').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const r = el.getBoundingClientRect();
+        const F = lastPX - (r.left + r.width/2);
+        const R = lastPY - (r.top + r.height/2);
+        const h = Math.hypot(F, R) || 1;
+        const torque = (F*vy - R*vx) / h;
+        gsap.to(el, {
+          inertia:{
+            x:{ velocity:Math.min(1080,Math.max(-1080,vx*30)), end:0 },
+            y:{ velocity:Math.min(1080,Math.max(-1080,vy*30)), end:0 },
+            rotation:{ velocity:Math.min(60,Math.max(-60,torque*20)), end:0 },
+            resistance:200
+          }
+        });
+      });
+    });
+  }
+
+  /* ── PAGE THEME SWITCH ─────────────────────────────────── */
+  document.querySelectorAll('[data-page-theme]').forEach(el => {
+    ScrollTrigger.create({
+      trigger:el,
+      start:'top 55%', end:'bottom 45%',
+      refreshPriority:-1,
+      onEnter(){ document.documentElement.dataset.theme = el.dataset.pageTheme; },
+      onLeave(){ delete document.documentElement.dataset.theme; },
+      onEnterBack(){ document.documentElement.dataset.theme = el.dataset.pageTheme; },
+      onLeaveBack(){ delete document.documentElement.dataset.theme; }
+    });
+  });
+
+  /* ── GLOBAL MOUSE TRACKER ───────────────────────────────── */
+  window._mousePageX = 0; window._mousePageY = 0;
+  document.addEventListener('mousemove', e => {
+    window._mousePageX = e.clientX + window.scrollX;
+    window._mousePageY = e.clientY + window.scrollY;
+  }, {passive:true});
+}
+
+/* ================================================================
+   LOAD SEQUENCE
+================================================================ */
+function revealPage() {
+  document.documentElement.dataset.pageReady = '';
+  const wipe = document.getElementById('wipe');
+  const path = wipe.querySelector('path');
+
+  if(RM) {
+    // No wipe under reduced motion
+    wipe.dataset.transitionReady = '';
+    document.querySelectorAll('main, [data-text-reveal],[data-scroll-reveal]')
+      .forEach(el => { el.style.visibility='visible'; });
+    initPage();
+    return;
+  }
+
+  // Wipe: draw the scribble…
+  gsap.set('main', { autoAlpha:0 });
+  gsap.set(path, { drawSVG:'0% 100%', strokeWidth:'30%' });
+
+  // …then unwind
+  const tl = gsap.timeline();
+  tl.to('main', { autoAlpha:1, duration:0 }, 0.4);
+  tl.call(() => initPage(), null, 0.4);
+  tl.to(path, {
+    drawSVG:'100% 100%',
+    strokeWidth:'5%',
+    duration:1.25,
+    ease:'power1.inOut',
+    onComplete(){ wipe.dataset.transitionReady = ''; }
+  }, 0.4);
+}
+
+// Hero arrow bounce
+function setupHeroArrow() {
+  const wrap = document.querySelector('.hero-arrow-inner');
+  if(!wrap) return;
+  const svgs = wrap.querySelectorAll('svg');
+  document.querySelector('.hero-arrow-wrap')?.addEventListener('mouseenter', () => {
+    gsap.to(svgs, { y:'-100%', duration:.525, ease:'cubic-bezier(.175,.885,.32,1.275)', stagger:.05 });
+  });
+  document.querySelector('.hero-arrow-wrap')?.addEventListener('mouseleave', () => {
+    gsap.to(svgs, { y:'0%', duration:.525, ease:'cubic-bezier(.175,.885,.32,1.275)', stagger:.05 });
+  });
+}
+
+// GSAP failsafe: if GSAP doesn't load, reveal immediately
+function failsafe() {
+  document.documentElement.dataset.pageReady = '';
+  document.getElementById('wipe').dataset.transitionReady = '';
+  document.querySelectorAll('main,[data-text-reveal],[data-scroll-reveal]')
+    .forEach(el => { el.style.visibility='visible'; el.style.opacity='1'; });
+}
+
+const failsafeTimer = setTimeout(failsafe, 4000);
+
+// Start when fonts ready or 1.5s, whichever first
+Promise.race([
+  document.fonts.ready,
+  new Promise(r => setTimeout(r, 1500))
+]).then(() => {
+  clearTimeout(failsafeTimer);
+
+  // Check GSAP is available
+  if(typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    failsafe();
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin, InertiaPlugin);
+
+  buildMarquee();
+  buildStackCards();
+  buildCalendar();
+  buildTeamPhotos();
+  setupModal();
+  revealPage();
+  setupHeroArrow();
+});
+</script>
+</body>
+</html>
