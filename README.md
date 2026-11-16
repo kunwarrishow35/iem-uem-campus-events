@@ -151,3 +151,27 @@ Chrome 90+, Firefox 90+, Safari 15+, Edge 90+. Requires JavaScript.
 
 *Built for IEM × UEM — Ignite 2026, Kolkata.*
 
+---
+
+## Page Preview
+
+### 1. Hero Section
+![01-hero.png](screenshots/01-hero.png)
+
+### 2. Happening Now & Next (Pinned 3D Card Stack)
+#### Front Card
+![02a-happening-now.png](screenshots/02a-happening-now.png)
+
+#### Later Card
+![02b-happening-now.png](screenshots/02b-happening-now.png)
+
+### 3. Full Calendar Section
+![03-calendar.png](screenshots/03-calendar.png)
+
+### 4. Calendar with Hackathon Filter Active
+![04-calendar-filtered.png](screenshots/04-calendar-filtered.png)
+
+### 5. Meet the Organisers (Dark Theme)
+![05-organisers.png](screenshots/05-organisers.png)
+
+
